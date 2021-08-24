@@ -7,7 +7,7 @@ const ItemPure = ({item}) => {
     <View>
       <Text style={styles.title}>{item.title}</Text>
       <View style={styles.container}>
-        {item.images.map((image, index) => {
+        {item?.images?.map((image, index) => {
           return (
             <View key={index}>
               <Image

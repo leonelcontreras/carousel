@@ -9,6 +9,9 @@ export default StyleSheet.create({
     alignItems: 'center',
     marginLeft: 10
   },
+  disabled: {
+    backgroundColor: 'rgba(0,0,0,0.1)',
+  },
   buttonText: {
     color: '#fff',
     fontSize: 22,
