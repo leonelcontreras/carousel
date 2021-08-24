@@ -1,11 +1,11 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import { ItemPure, ButtonPure } from '../../pures'
 import styles from './carousel.style'
 
-const CarouselView = ({item, attribute}) => {
+const CarouselView = ({ item }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <ItemPure item={item}/>
       <View style={styles.acctionContainer}>
         <ButtonPure label='Prev' />

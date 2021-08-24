@@ -7,7 +7,7 @@ const CarouselScreen = () => {
   const carousel = useSelector(state => state.carouselReducer)
   console.log('carousel ->', carousel)
 
-  return <CarouselView item={carousel[0]} attribute='title' />
+  return <CarouselView item={carousel[0]} />
 }
 
 export default CarouselScreen
