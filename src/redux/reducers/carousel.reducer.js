@@ -70,6 +70,7 @@ const carouselReducer = (state = initialState, action) => {
         ...state, 
         actualIndex: state.actualIndex + 1, 
         item: state.carousels[state.actualIndex + 1],
+        
         last: (state.carousels.length - 1) === (state.actualIndex + 1),
         first: false
       }
@@ -78,6 +79,7 @@ const carouselReducer = (state = initialState, action) => {
         ...state,
         actualIndex: state.actualIndex - 1,
         item: state.carousels[state.actualIndex - 1],
+        
         first: (state.actualIndex - 1) === 0,
         last: false,
       }

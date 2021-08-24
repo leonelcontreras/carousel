@@ -8,11 +8,8 @@ const CarouselView = (props) => {
     item,
     first,
     last,
-    loading,
     handleOnClickNext,
     handleOnClickPrev,
-    handleOnLoadEnd,
-    handleOnLoadStart,
   } = props
 
   return (
@@ -20,8 +17,6 @@ const CarouselView = (props) => {
       <ItemPure 
         item={item}
         attr='id'
-        handleOnLoadEnd={handleOnLoadEnd} 
-        handleOnLoadStart={handleOnLoadStart}
       />
       <View style={styles.acctionContainer}>
         <ButtonPure 
