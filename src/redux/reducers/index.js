@@ -1,0 +1,1 @@
+export { default as carouselReducer } from './carousel.reducer' 

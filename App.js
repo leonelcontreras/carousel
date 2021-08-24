@@ -1,14 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, View } from 'react-native'
+import { CarouselScreen } from './src/components/screens'
+import { StoreProvider } from './src/providers'
 
-export default function App() {
+const Application = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start asassas working on your app!</Text>
-      <StatusBar style="auto" />
+      <CarouselScreen />
     </View>
-  );
+  )
+}
+
+export default () => {
+  return (
+    <StoreProvider>
+      <Application />
+    </StoreProvider>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -18,4 +26,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})
