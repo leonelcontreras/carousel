@@ -1,12 +1,16 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import { ListPure } from '../../pures'
+import { ItemPure, ButtonPure } from '../../pures'
+import styles from './carousel.style'
 
-const CarouselView = ({data, attribute}) => {
-  console.log('Hey', attribute)
+const CarouselView = ({item, attribute}) => {
   return (
     <View>
-      <ListPure data={data} attribute={attribute} />        
+      <ItemPure item={item}/>
+      <View style={styles.acctionContainer}>
+        <ButtonPure label='Prev' />
+        <ButtonPure label='Next' />
+      </View>
     </View>
   )
 }

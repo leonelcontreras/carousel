@@ -8,6 +8,7 @@ const ListPure = ({data, attribute}) => {
   return (
     <FlatList
       pagingEnabled
+      shoe
       horizontal
       style={styles.list}
       data={data}

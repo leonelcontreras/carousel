@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native'
 
-const ListItemPure = ({item}) => {
+const ItemPure = ({item}) => {
   console.log('Item -->', item)
   return (
     <View style={styles.card}>
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default ListItemPure
+export default ItemPure
