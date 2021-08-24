@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { View } from 'react-native'
 import { ItemPure, ButtonPure } from '../../pures'
 import styles from './carousel.style'

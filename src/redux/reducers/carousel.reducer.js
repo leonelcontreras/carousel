@@ -1,5 +1,6 @@
 import { persistReducer } from 'redux-persist'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { CAROUSEL } from '../action-types'
 
 const initialState = {
   item: {},
@@ -62,9 +63,9 @@ const initialState = {
 
 const carouselReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'GET_ITEM':
+    case CAROUSEL.GET_ITEM:
       return {...state, item: state.carousels[state.actualIndex]}
-    case 'GET_NEXT_ITEM':
+    case CAROUSEL.GET_NEXT_ITEM:
       return {
         ...state, 
         actualIndex: state.actualIndex + 1, 
@@ -72,7 +73,7 @@ const carouselReducer = (state = initialState, action) => {
         last: (state.carousels.length - 1) === (state.actualIndex + 1),
         first: false
       }
-    case 'GET_PREV_ITEM':
+    case CAROUSEL.GET_PREV_ITEM:
       return {
         ...state,
         actualIndex: state.actualIndex - 1,
