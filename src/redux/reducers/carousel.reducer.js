@@ -1,3 +1,6 @@
+import { persistReducer } from 'redux-persist'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+
 const initialState = {
   item: {},
   first: true,
@@ -8,53 +11,53 @@ const initialState = {
       id: 1,
       title: "The lovers of food",
       images: [
-        'https://source.unsplash.com/collection/190727/1600x900',
-        'https://source.unsplash.com/collection/190727/1600x900',
-        'https://source.unsplash.com/collection/190727/1600x900',
-        'https://source.unsplash.com/collection/190727/1600x900'
+        'https://source.unsplash.com/collection/190727/800x600',
+        'https://source.unsplash.com/collection/190727/800x600',
+        'https://source.unsplash.com/collection/190727/800x600',
+        'https://source.unsplash.com/collection/190727/800x600'
       ]
     },
     {
       id: 2,
       title: "Working from home",
       images: [
-        'https://source.unsplash.com/collection/190728/1600x900',
-        'https://source.unsplash.com/collection/190728/1600x900',
-        'https://source.unsplash.com/collection/190728/1600x900',
-        'https://source.unsplash.com/collection/190728/1600x900'
+        'https://source.unsplash.com/collection/190728/800x600',
+        'https://source.unsplash.com/collection/190728/800x600',
+        'https://source.unsplash.com/collection/190728/800x600',
+        'https://source.unsplash.com/collection/190728/800x600'
       ]
     },
     {
       id: 3,
       title: "Wild Life",
       images: [
-        'https://source.unsplash.com/collection/190726/1600x900',
-        'https://source.unsplash.com/collection/190726/1600x900',
-        'https://source.unsplash.com/collection/190726/1600x900',
-        'https://source.unsplash.com/collection/190726/1600x900'
+        'https://source.unsplash.com/collection/190726/800x600',
+        'https://source.unsplash.com/collection/190726/800x600',
+        'https://source.unsplash.com/collection/190726/800x600',
+        'https://source.unsplash.com/collection/190726/800x600'
       ]
     },
     {
       id: 4,
       title: "Enjoy life",
       images: [
-        'https://source.unsplash.com/collection/190725/1600x900',
-        'https://source.unsplash.com/collection/190725/1600x900',
-        'https://source.unsplash.com/collection/190725/1600x900',
-        'https://source.unsplash.com/collection/190725/1600x900'
+        'https://source.unsplash.com/collection/190725/800x600',
+        'https://source.unsplash.com/collection/190725/800x600',
+        'https://source.unsplash.com/collection/190725/800x600',
+        'https://source.unsplash.com/collection/190725/800x600'
       ]
     },
     {
-      id: 4,
+      id: 5,
       title: "Color palette",
       images: [
-        'https://source.unsplash.com/collection/190723/1600x900',
-        'https://source.unsplash.com/collection/190723/1600x900',
-        'https://source.unsplash.com/collection/190723/1600x900',
-        'https://source.unsplash.com/collection/190723/1600x900'
+        'https://source.unsplash.com/collection/190723/800x600',
+        'https://source.unsplash.com/collection/190723/800x600',
+        'https://source.unsplash.com/collection/190723/800x600',
+        'https://source.unsplash.com/collection/190723/800x600'
       ]
     }
-]
+  ]
 }
 
 const carouselReducer = (state = initialState, action) => {
@@ -82,4 +85,10 @@ const carouselReducer = (state = initialState, action) => {
   }
 }
 
-export default carouselReducer
+const persistConfig = {
+  key: 'carousel',
+  storage: AsyncStorage,
+  whitelist: ['item', 'first', 'last', 'actualIndex']
+}
+
+export default persistReducer(persistConfig, carouselReducer)

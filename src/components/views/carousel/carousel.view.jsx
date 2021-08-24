@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { View } from 'react-native'
 import { ItemPure, ButtonPure } from '../../pures'
 import styles from './carousel.style'
@@ -13,7 +13,7 @@ const CarouselView = (props) => {
   } = props
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} >
       <ItemPure item={item}/>
       <View style={styles.acctionContainer}>
         <ButtonPure 
