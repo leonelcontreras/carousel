@@ -1,18 +1,10 @@
-import React, { useEffect, useRef } from 'react'
-import { View, Text, Image, Animated } from 'react-native'
+import React from 'react'
+import { View, Text, Image } from 'react-native'
+import { useAnimation } from '../../../hooks'
 import styles from './item.style'
 
 const ItemPure = ({ item, attr, handleOnLoadEnd, handleOnLoadStart }) => {
-  const animationValue = useRef(new Animated.Value(0)).current
-  
-  useEffect(() => {
-    animationValue.setValue(0)
-    Animated.timing(animationValue, {
-      toValue: 1,
-      duration: 1000,
-      useNativeDriver: true
-    }).start()
-  }, [item[attr]])
+  const {Animated, animation } = useAnimation(item[attr])
 
   return (
     <View>
@@ -20,7 +12,7 @@ const ItemPure = ({ item, attr, handleOnLoadEnd, handleOnLoadStart }) => {
       <View style={styles.container}>
         {item?.images?.map((image, index) => {
           return (
-            <Animated.View key={index} style={{opacity: animationValue }}>
+            <Animated.View key={index} style={{opacity: animation }}>
               <Image
                 style={styles.image}
                 source={{uri: image}}
