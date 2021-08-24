@@ -14,5 +14,9 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: 10,
+  },
+  hidden: {
+    opacity: 0,
+    height: 0
   }
 })

@@ -6,15 +6,23 @@ import styles from './carousel.style'
 const CarouselView = (props) => {
   const {
     item,
+    first,
+    last,
+    loading,
     handleOnClickNext,
     handleOnClickPrev,
-    first,
-    last
+    handleOnLoadEnd,
+    handleOnLoadStart,
   } = props
 
   return (
-    <View style={styles.container} >
-      <ItemPure item={item}/>
+    <View style={styles.container}>
+      <ItemPure 
+        item={item}
+        attr='id'
+        handleOnLoadEnd={handleOnLoadEnd} 
+        handleOnLoadStart={handleOnLoadStart}
+      />
       <View style={styles.acctionContainer}>
         <ButtonPure 
           label='Prev'
