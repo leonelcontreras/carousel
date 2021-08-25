@@ -1,2 +1,3 @@
-export { default as ListPure } from './list/list.pure'
-export { default as ListItemPure } from './list-item/list-item.pure'
+export { default as ItemPure } from './item/item.pure'
+export { default as ButtonPure } from './button/button.pure'
+export { default as LoadingPure } from './loading/loading.pure'

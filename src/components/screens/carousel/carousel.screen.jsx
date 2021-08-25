@@ -1,13 +1,28 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { CarouselView } from '../../views'
+import { CAROUSEL } from '../../../redux/action-types'
 
 const CarouselScreen = () => {
-  const carousel = useSelector(state => state.carouselReducer)
-  console.log('carousel ->', carousel)
+  const dispatch = useDispatch()
+  const { item, last, first } = useSelector(state => state.carouselReducer)
 
-  return <CarouselView data={carousel} attribute='title' />
+  const handleOnClickPrev = () => dispatch({type: CAROUSEL.GET_PREV_ITEM})
+  const handleOnClickNext = () => dispatch({type: CAROUSEL.GET_NEXT_ITEM})
+
+  useEffect(() => {
+    dispatch({type: CAROUSEL.GET_ITEM})
+  }, [])
+
+  return (
+    <CarouselView
+      item={item}
+      first={first}
+      last={last}
+      handleOnClickNext={handleOnClickNext}
+      handleOnClickPrev={handleOnClickPrev}
+    />
+  )
 }
 
 export default CarouselScreen

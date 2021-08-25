@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { Dimensions, StyleSheet, View, Text } from 'react-native'
 import { CarouselScreen } from './src/components/screens'
 import { StoreProvider } from './src/providers'
 
@@ -22,7 +22,6 @@ export default () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
