@@ -61,28 +61,29 @@ const initialState = {
   ]
 }
 
+const getActualItem = (state, position) => {
+  const actualIndex = state.actualIndex + position
+  const item = state.carousels[actualIndex]
+  const last = (state.carousels.length - 1) === actualIndex
+  const first = actualIndex === 0
+
+  return {
+    ...state,
+    actualIndex,
+    item,
+    first,
+    last
+  }
+}
+
 const carouselReducer = (state = initialState, action) => {
   switch (action.type) {
     case CAROUSEL.GET_ITEM:
       return {...state, item: state.carousels[state.actualIndex]}
     case CAROUSEL.GET_NEXT_ITEM:
-      return {
-        ...state, 
-        actualIndex: state.actualIndex + 1, 
-        item: state.carousels[state.actualIndex + 1],
-        
-        last: (state.carousels.length - 1) === (state.actualIndex + 1),
-        first: false
-      }
+      return getActualItem(state, 1)
     case CAROUSEL.GET_PREV_ITEM:
-      return {
-        ...state,
-        actualIndex: state.actualIndex - 1,
-        item: state.carousels[state.actualIndex - 1],
-        
-        first: (state.actualIndex - 1) === 0,
-        last: false,
-      }
+      return getActualItem(state, -1)
     default:
       return state
   }
