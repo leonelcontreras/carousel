@@ -17,7 +17,7 @@ And you can watch a video of the application here:
 https://github.com/leonelcontreras/carousel/blob/main/documentation/android.mp4?raw=true (Android)
 https://github.com/leonelcontreras/carousel/blob/main/documentation/ios.mp4?raw=true (iOS)
 
-If you can install the application please execute the next commands:
+If you want to install the application please execute the next commands:
 
 
 
